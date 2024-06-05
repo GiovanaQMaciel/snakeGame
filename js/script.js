@@ -25,7 +25,7 @@ let snake = [initialPosition];
 
 //aumentar pontuação
 const incrementScore = () => {
-  score.innerText = +score.innerText + snake.length;
+  score.innerText = +score.innerText + snake.length*3;
 };
 
 const incrementSpeed = () => {
@@ -115,7 +115,7 @@ const moveSnake = () => {
 
 //desenhar o grid
 const drawGrid = () => {
-  ctx.lineWidth = 1; //espessura da linha
+  ctx.lineWidth = 2; //espessura da linha
   ctx.strokeStyle = "#282828"; //cor da linha
   //for para desenhar as linhas do grid
   for (let i = 30; i < canvas.width; i += 30) {
@@ -155,7 +155,7 @@ const checkEat = () => {
     food.y = y;
     food.color = randomColor();
 
-    velocidade = velocidade > 95 ? velocidade * (1 + 0.01 * snake.length) : 200;
+    velocidade = velocidade > 95 ? velocidade * (1 - 0.01 * snake.length) : 10;
   }
 };
 
