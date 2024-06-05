@@ -155,7 +155,7 @@ const checkEat = () => {
     food.y = y;
     food.color = randomColor();
 
-    velocidade = velocidade > 95 ? velocidade * (1 - 0.01 * snake.length) : 80;
+    velocidade = velocidade > 95 ? velocidade * (1 + 0.01 * snake.length) : 200;
   }
 };
 
